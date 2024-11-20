@@ -32,7 +32,7 @@ functions:
                  "format":"number"
              },
              {
-                 "key":"My test output text"
+                 "key":"My test output text",
                  "value":"This is my text"
              }
           ],
