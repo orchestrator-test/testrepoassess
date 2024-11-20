@@ -20,7 +20,22 @@ functions:
         result: {
           "completedWith":"success",
           "message": "The workflow testrepoassess completed successfully",
-          "outputs":[],
+          "outputs":[
+             {
+                 "key":"My test output link",
+                 "value":"https://google.com",
+                 "format":"link"
+             },
+             {
+                 "key":"My test output that is a number",
+                 "value":"11111112222233333334444445555556666677777788888999",
+                 "format":"number"
+             },
+             {
+                 "key":"My test output text"
+                 "value":"This is my text"
+             }
+          ],
           "nextWorkflows":[
             {
                 "id":"greeting",
@@ -33,7 +48,7 @@ functions:
     type: expression
     operation: '{
         result: {
-          "completedWith":"success",
+          "completedWith":"error",
           "message": "The workflow testrepoassess completed without sampleText",
           "outputs":[],
           "nextWorkflows":[]
