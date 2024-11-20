@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: testrepoassess
+  description: A workflow for onboarding applications to OCP cluster
+  annotations:
+    argocd/app-selector: rht-gitops.com/janus-argocd=testrepoassess
+    backstage.io/kubernetes-namespace: orchestrator-gitops
+    backstage.io/kubernetes-id: testrepoassess-ci
+    janus-idp.io/tekton: testrepoassess
+    github.com/project-slug: orchestrator-test/testrepoassess
+spec:
+  type: workflow-project
+  system: system:default/janus-orchestrator
+  lifecycle: development
+  owner: user:guest

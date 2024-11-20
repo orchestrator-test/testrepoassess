@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testrepoassess-gitops
+  namespace: orchestrator-gitops
+  labels:
+    app-type: workflow
+    app: testrepoassess
+    rht-gitops.com/janus-argocd: testrepoassess-gitops
+spec:
+  destination:
+    namespace: sonataflow-infra
+    server: https://kubernetes.default.svc
+  project: orchestrator-gitops
+  source:
+    path: ./kustomize/base
+    repoURL: git@github.com:orchestrator-test/testrepoassess-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
